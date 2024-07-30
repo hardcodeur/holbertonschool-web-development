@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('./fonts/source-sans-pro/SourceSansPro-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('./fonts/source-sans-pro/SourceSansPro-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('./fonts/source-sans-pro/SourceSansPro-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('./fonts/source-sans-pro/SourceSansPro-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url('./fonts/source-sans-pro/SourceSansPro-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Source Sans Pro italic";
+    src: url('./fonts/source-sans-pro/SourceSansPro-It.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+
+:root{
+    --theme-white :#FFFFFF;
+    --theme-black :#000000;
+    --theme-gray : #D8D8D8;
+    --theme-navy : #071629;
+    --theme-purpule :#C271FF;
+
+    --font-main : "source-sans-pro",sans-serif;
+    --font-italic : "Source Sans Pro italic",sans-serif;
+}
+
+body{
+    font-family: var(--font-main);
+    background-color: var(--theme-white);
+    color: var(--theme-navy);
+    margin: 0;
+}
+
+span.txt-purpule{
+    color: var(--theme-purpule);
+    font-weight: 700 !important;
+}
+
+header#header{
+    background-image: linear-gradient(0deg, rgba(7,22,41,1) 10%, rgba(41,48,61,0) 100%), url(./img/header_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header#header nav#main-menu{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 37px;
+}
+
+header#header  div.menu-item a{
+    color: var(--theme-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: 2rem;
+}
+
+header#header section#main-part{
+    color: var(--theme-white);
+    text-align: center;
+    width: 100%;
+}
+
+section#main-part div.part-title h1{
+    font-weight: 700;
+    font-size: 120px;
+    margin-bottom: 0;
+}
+
+section#main-part div.part-title p.sub-title{
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+div.part-title p.sub-title span{
+    margin-right: 2rem;
+}
+
+section#main-part div.part-title button.btn{
+    color: var(--theme-white);
+    font-size: 14px;
+    font-weight : 600;
+    background-color: var(--theme-purpule);
+    border: none;
+    border-radius: 22px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+section#main-part div.part-presentation{
+    margin-top: 7rem;
+}
+
+section#main-part div.part-presentation h2{
+    font-size: 32px;
+    font-weight: 300;
+}
+
+section#main-part div.presentation-items{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+div.presentation-items div.presentation-item img{
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+}
+
+div.presentation-items div.presentation-item h3{
+    font-weight: 900;
+    font-size: 10px;
+    margin: 0;
+}
+
+div.presentation-items div.presentation-item p{
+    font-size: 16px;
+    font-family: var(--font-italic);
+    margin-top: 0;
+}
+
