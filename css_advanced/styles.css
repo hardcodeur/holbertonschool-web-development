@@ -6,28 +6,29 @@
 }
 
 @font-face {
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro bold";
     src: url('./fonts/source-sans-pro/SourceSansPro-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Source Sans Pro";
-    src: url('./fonts/source-sans-pro/SourceSansPro-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro semibold";
     src: url('./fonts/source-sans-pro/SourceSansPro-Semibold.otf') format('opentype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro light";
+    src: url('./fonts/source-sans-pro/SourceSansPro-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Source Sans Pro black";
     src: url('./fonts/source-sans-pro/SourceSansPro-Black.otf') format('opentype');
     font-weight: 900;
     font-style: normal;
@@ -45,19 +46,25 @@
 :root{
     --theme-white :#FFFFFF;
     --theme-black :#000000;
-    --theme-gray : #D8D8D8;
+    --theme-navy-light :rgba(7, 22, 41, 0.5);
     --theme-navy : #071629;
     --theme-purpule :#C271FF;
 
     --font-main : "source-sans-pro",sans-serif;
+    --font-bold : "Source Sans Pro bold",sans-serif;
+    --font-semibold : "Source Sans Pro semibold",sans-serif;
+    --font-light : "Source Sans Pro light",sans-serif;
+    --font-black : "Source Sans Pro black",sans-serif;
     --font-italic : "Source Sans Pro italic",sans-serif;
 }
 
 body{
     font-family: var(--font-main);
+    font-weight: 400;
     background-color: var(--theme-white);
     color: var(--theme-navy);
     margin: 0;
+    width: 1440px;
 }
 
 span.txt-purpule{
@@ -65,28 +72,77 @@ span.txt-purpule{
     font-weight: 700 !important;
 }
 
+button.btn{
+    color: var(--theme-white);
+    font-size: 14px;
+    font-weight : 600;
+    background-color: var(--theme-purpule);
+    border: none;
+    border-radius: 22px;
+    padding: 1rem;
+    text-transform: uppercase;
+}
+
 header#header{
-    background-image: linear-gradient(0deg, rgba(7,22,41,1) 10%, rgba(41,48,61,0) 100%), url(./img/header_bg.png);
+    position: relative;
+    background-image: linear-gradient(0deg, rgba(7,22,41,1) 10%, rgba(41,48,61,0) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 1093px;
+}
+
+header#header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./img/header_bg.png');
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    z-index: -1;
 }
 
 header#header nav#main-menu{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
     margin-top: 37px;
+    margin-left: 172px;
+    width: 1103px;
+    height: 34px;
+}
+
+nav#main-menu .menu-logo,
+nav#main-menu .menu-item{
+    display: inline-block;
+}
+
+nav#main-menu .menu-logo{
+    width: 167px;
+    vertical-align: top;
+}
+
+nav#main-menu .menu-item{
+    margin-left: 600px;
+    width: 234px;
+    vertical-align: sub;
+    text-transform: uppercase;
 }
 
 header#header  div.menu-item a{
     color: var(--theme-white);
     text-decoration: none;
+    font-family: var(--font-bold) ;
     font-weight: 700;
     font-size: 12px;
-    margin-right: 2rem;
+}
+
+header#header div.menu-item a:not(:last-child) {
+    margin-right: 48px;
 }
 
 header#header section#main-part{
@@ -96,44 +152,51 @@ header#header section#main-part{
 }
 
 section#main-part div.part-title h1{
+    font-family: var(--font-bold) ;
     font-weight: 700;
     font-size: 120px;
     margin-bottom: 0;
+    margin-top: 220px;
 }
 
 section#main-part div.part-title p.sub-title{
+    font-family: var(--font-bold) ;
     font-weight: 700;
     font-size: 16px;
     margin-top: 0;
+    margin-bottom: 40px;
+    text-transform: uppercase
 }
 
 div.part-title p.sub-title span{
-    margin-right: 2rem;
-}
-
-section#main-part div.part-title button.btn{
-    color: var(--theme-white);
-    font-size: 14px;
-    font-weight : 600;
-    background-color: var(--theme-purpule);
-    border: none;
-    border-radius: 22px;
-    padding: 1rem;
-    margin-top: 1rem;
+    margin-right: 50px;
 }
 
 section#main-part div.part-presentation{
-    margin-top: 7rem;
+    margin-top: 130px;
 }
 
 section#main-part div.part-presentation h2{
     font-size: 32px;
+    font-family: var(--font-light) ;
     font-weight: 300;
 }
 
 section#main-part div.presentation-items{
-    display: flex;
-    justify-content: space-evenly;
+    width: 1009px;
+    height: 234px;
+    margin-left: 217px;
+    margin-top: 90px;
+}
+
+div.presentation-items div.presentation-item{
+    display: inline-block;
+    width: 150px;
+    height: 232px;
+}
+
+div.presentation-items div.presentation-item:not(:last-child){
+    margin-right: 130px;
 }
 
 div.presentation-items div.presentation-item img{
@@ -143,14 +206,324 @@ div.presentation-items div.presentation-item img{
 }
 
 div.presentation-items div.presentation-item h3{
+    font-family: var(--font-black) ;
     font-weight: 900;
-    font-size: 10px;
+    font-size: 18px;
     margin: 0;
 }
 
 div.presentation-items div.presentation-item p{
     font-size: 16px;
     font-family: var(--font-italic);
+    font-weight: 400;
     margin-top: 0;
 }
 
+/* Testimonial */
+
+section#testimonials{
+    width: 100%;
+    height: 392px;
+    background-color: var(--theme-purpule);
+}
+
+section#testimonials div.testimonial{
+    width: 934px;
+    height: 160px;
+    margin: auto;
+    padding: 116px 0;
+}
+
+div.testimonial img{
+    width: 160px;
+    height: auto;
+    border-radius: 50%;
+    vertical-align: top;
+}
+
+div.testimonial div.testimonial-text{
+    display: inline-block;
+    width: 730px;
+    height: 158px;
+    color: var(--theme-white);
+}
+
+div.testimonial div.testimonial-text blockquote{
+    font-size: 22px;
+    font-family: var(--font-main);
+    font-weight: 400;
+}
+
+div.testimonial div.testimonial-text p{
+    margin-left: 40px;
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+div.testimonial div.testimonial-text p.testimonial-name{
+    font-family: var(--font-bold) ;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+div.testimonial div.testimonial-text p:last-child{
+    font-family: var(--font-italic);
+    font-weight: 400;
+    margin-top: 0;
+}
+
+
+/* Tutorials */
+
+section#tutorials{
+    width: 100%;
+    height: 502px;
+    margin: 26px auto;   
+}
+
+section#tutorials h1{
+    height: 40px;
+    margin: 0;
+    font-family: var(--font-light) ;
+    font-weight: 300;
+    font-size: 32px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+section#tutorials div.tutorials-boxe{
+    width: 1228px;
+    height: 450px; 
+    margin: auto;
+}
+
+section#tutorials div.tutorial{
+    display: inline-block;
+    width: 255px;
+    height: 335px;
+}
+
+section#tutorials div.tutorial:not(:last-child){
+    margin-right: 64px;
+}
+
+div.tutorial .tutorial-preview{
+    width: 255px;
+    height: 154px;
+    position: relative;
+    display: inline-block;
+}
+
+.tutorial-preview .preview{
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.tutorial-preview .svg-player{
+    position: absolute;
+    top: 47px;
+    left: 77px;
+    width: 40%;
+    height: 40%;
+    background-image: url('./img/play.svg'); /* Chemin vers votre SVG */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+div.tutorial h2{
+    font-size: 16px;
+    font-family: var(--font-bold) ;
+    font-weight: 700;
+}
+
+div.tutorial p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-bottom: 0;
+    color: var(--theme-navy-light);
+}
+
+div.tutorial .tutorial-comment img{
+    width: 30px;
+    height: auto;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+div.tutorial .tutorial-comment h3{
+    color: var(--theme-purpule);
+    display: inline-block;
+    font-size: 14px;
+    font-family: var(--font-semibold) ;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+
+div.tutorial .tutorial-rating div.rating{
+    display: inline-block;
+    width: 107px;
+    height: 15px;
+}
+
+div.tutorial .tutorial-rating p {
+    display: inline-block;
+    margin-left: 46px;
+    color: var(--theme-purpule);
+}
+
+
+/* membership */
+
+section#membership{
+    background-color: var(--theme-navy);
+    color: var(--theme-white);
+    width: 100%;
+    height: 502px;
+    text-align: center;
+
+}
+section#membership h1{
+    padding: 70px;
+    margin: 0;
+}
+
+section#membership div.membership{
+ margin: auto;
+ margin-bottom: 70px;
+}
+
+section#membership div.membership .membership-item{
+    display: inline-block;
+    width: 257px;
+    height: 153px;
+}
+
+section#membership div.membership .membership-item:not(:last-child){
+    margin-right: 64px;
+}
+
+div.membership .membership-item img{
+    width: 44px;
+    height: 36px;
+}
+
+div.membership .membership-item h2{
+    font-family: var(--font-semibold);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+div.membership .membership-item p{
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+/* FAQ */
+
+section#faq{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+section#faq h1{
+    text-align: center;
+    font-size: 60px;
+    font-family: var(--font-light) ;
+    font-weight: 300;
+    margin: 0;
+    padding: 50px 0;
+    text-transform: uppercase;
+}
+
+section#faq .faq{
+    width: 920px;
+    margin-left: 315px;
+}
+
+.faq .faq-row{
+    width: 100%;
+}
+
+.faq .faq-row .faq-item{
+    display: inline-block;
+    width: 350px;
+    height: 242px;
+}
+
+.faq-row:nth-child(1){
+    margin-bottom: 107px;
+}
+
+.faq-row .faq-item:nth-child(1){
+    margin-right: 107px;
+}
+
+.faq-row .faq-item h2{
+    font-size: 16px;
+    font-family: var(--font-bold);
+    font-weight: 700;
+}
+
+.faq-row .faq-item p{
+    font-size: 14px;
+    font-family: var(--font-main);
+    font-weight: 400;
+    color: var(--theme-navy-light);
+    line-height: 25px;
+}
+
+
+/* Footer */
+
+footer{
+    width: 100%;
+    height: 249px;
+    background-color: var(--theme-navy);
+}
+
+footer div.footer{
+    width: 100%;
+    height: 100%;
+}
+
+div.footer .footer-nav{
+    width: 100%;
+    height: 30px;
+    margin-left: 165px;
+    padding-top: 95px;
+}
+
+.footer-nav img{
+    width: 189px;
+    height: 30px;
+}
+
+.footer-nav nav{
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    margin-left: 736px;
+}
+
+.footer-nav nav a>img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+div.footer p{
+    margin-top: 60px;
+    color: var(--theme-white);
+    text-align: center;
+}
